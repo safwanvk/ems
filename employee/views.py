@@ -3,8 +3,6 @@ from django.shortcuts import render
 # ViewSets define the view behavior.
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
-
-
 from rest_framework.response import Response
 
 
@@ -14,7 +12,7 @@ from .serializers import EmployeeSerializer
 # Create your views here.
 # Employee Viewset
 class EmployeeViewset(viewsets.ViewSet):
-    
+
 
     def create(self, request):
         try:

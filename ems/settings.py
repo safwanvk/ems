@@ -42,21 +42,10 @@ INSTALLED_APPS = [
     'employee.apps.EmployeeConfig',
     
     #DRF
-    'rest_framework',
-    # 'rest_framework.authtoken',
-    # 'corsheaders'
+    'rest_framework'
 
 ]
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION': [
-#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-#     ],
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.AllowAny',
-#         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
-#     )
-# }
 
 
 MIDDLEWARE = [
@@ -67,9 +56,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'corsheaders.middleware.CorsMiddleware',
-    # 'django.middleware.common.CommonMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'ems.urls'
@@ -142,8 +131,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# CORS_ALLOWED_ORIGINS = [
-# ]
+CORS_ALLOWED_ORIGINS = [
+]
 
 
 # Default primary key field type
