@@ -40,12 +40,24 @@ INSTALLED_APPS = [
     
     #installed apps
     'employee.apps.EmployeeConfig',
+    'accounts.apps.AccountsConfig',
     
     #DRF
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders'
 
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION': [
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+    )
+}
 
 
 MIDDLEWARE = [
