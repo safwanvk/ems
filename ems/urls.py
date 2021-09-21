@@ -19,10 +19,11 @@ from django.urls import path, include
 # Routers provide an easy way of automatically determining the URL conf.
 from rest_framework import routers
 
-from employee.views import EmployeeViewset
+from employee.views import EmployeeViewset, EmployeeAttendanceViewSet
 
 router = routers.DefaultRouter()
 router.register("employee", EmployeeViewset, basename="employee")
+router.register("attendance", EmployeeAttendanceViewSet, basename="attendance")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -9,4 +9,10 @@ class Employee(models.Model):
     address = models.CharField(max_length=255)
     added_on = models.DateTimeField(auto_now_add=True)
     objects = models.Manager()
+    
+class Attendance(models.Model):
+    id = models.AutoField(primary_key=True)
+    employee_id = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    date = models.DateField()
+    status = models.BooleanField()
 
