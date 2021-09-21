@@ -37,7 +37,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    #installed apps
+    'employee.apps.EmployeeConfig',
+    
+    #DRF
+    'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders'
+
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION': [
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+    )
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
